@@ -4,7 +4,9 @@
   "description": "타입스크립트를 이용한 블록체인",
   "main": "test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "prestart": "tsc" 
   },
   "repository": {
     "type": "git",

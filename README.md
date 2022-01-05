@@ -29,3 +29,6 @@ Npm init함
 
 4.  컴파일할때는 커맨드에서 tsc
     하면 index.js와 index.js.map을 생성함
+
+5.  "start": "node index.js", //npm start시 수행되는 커맨드
+    "prestart": "tsc" //npm start전 수행되는 커맨드
