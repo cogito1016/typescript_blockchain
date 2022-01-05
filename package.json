@@ -1,0 +1,22 @@
+{
+  "name": "typescript_blockchain",
+  "version": "1.0.0",
+  "description": "타입스크립트를 이용한 블록체인",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cogito1016/typescript_blockchain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cogito1016/typescript_blockchain/issues"
+  },
+  "homepage": "https://github.com/cogito1016/typescript_blockchain#readme",
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
+}
