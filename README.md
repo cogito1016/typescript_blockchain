@@ -32,3 +32,7 @@ Npm init함
 
 5.  "start": "node index.js", //npm start시 수행되는 커맨드
     "prestart": "tsc" //npm start전 수행되는 커맨드
+
+6.  함수의 매개변수 뒤 ‘?’를 붙이게되면 선택적 파라미터가 된다.
+    즉, 매개변수가 있을 수 있고 없을 수 있다.
+    없다면 당연히 undefined
