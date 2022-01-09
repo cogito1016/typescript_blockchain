@@ -56,3 +56,6 @@ Include value수정 - src/\*_/_ : src폴더 내 모든 파일들이 대상
 8-3.후 nom start
 -src폴더 내 모든 ts파일들을 대상으로 컴파일 -컴파일된 js파일들은 dist폴더에 위치
 -index.js를 실행
+
+9.  타입스크립트의 Object를 위해서는 inteface가 필요
+    interface를 통해 Object 키 들의 명세를 작성할 수 있다.
