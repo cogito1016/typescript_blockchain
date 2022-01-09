@@ -39,3 +39,20 @@ Npm init함
 
 7.  함수의 매개변수에 ‘:’를 통해 타입을 지정할 수 있다.
     그럴 경우 함수호출 시 매개변수가 지정된 타입과 다르다면, 에러발생
+
+8.  Tic watch를 설치
+    => 스크립트를 단순화해주는 역할을 하는듯 (+a는 추후에)
+    => watch모드에서 컴파일을 수행 (지정해준 src폴더가 변경될때마다 dist폴더에 반영된다)
+    => 코드수정 때마다 컴파일진행 및 수행이된다.(watch모드에 지정해둔 커맨드를 따른다)
+    npm install tsc-watch --save-dev
+
+8-1.Package.json의 start 스크립트 수정
+Tsc-watch—onSuccess \” node index.js \” -tsc수행 후 성공하면 node index.js 실행
+
+8-2.tsconfig.json 수정
+compilerOptions - outDir 추가 : ts가 컴파일되어 js가 생성되는 폴더 지정
+Include value수정 - src/\*_/_ : src폴더 내 모든 파일들이 대상
+
+8-3.후 nom start
+-src폴더 내 모든 ts파일들을 대상으로 컴파일 -컴파일된 js파일들은 dist폴더에 위치
+-index.js를 실행
