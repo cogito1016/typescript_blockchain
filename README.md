@@ -69,3 +69,9 @@ Include value수정 - src/\*_/_ : src폴더 내 모든 파일들이 대상
 Interface vs class
 Node, express, react 등을 사용한다면 class를 사용해야함
 ..이부분은 설명이 부족하다 보완이 필요
+
+11. Typescript의 class와 Array의 활용
+    ex)
+    let genesisblock:[] -> 배열
+    let genesisblock:[number] -> 넘버타입의 배열
+    let genesisblock:[number] = [arrName] -> arrName이라는 number타입의 배열로 초기화
