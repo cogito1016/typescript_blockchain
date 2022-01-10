@@ -73,5 +73,11 @@ Node, express, react 등을 사용한다면 class를 사용해야함
 11. Typescript의 class와 Array의 활용
     ex)
     let genesisblock:[] -> 배열
-    let genesisblock:[number] -> 넘버타입의 배열
-    let genesisblock:[number] = [arrName] -> arrName이라는 number타입의 배열로 초기화
+    let genesisblock:number[] -> 넘버타입의 배열
+    let genesisblock:number[] = [arrName] -> arrName이라는 number타입의 배열로 초기화
+
+12. Crypto-js 설치
+    Npm install crypto-js
+    typescript라서 import의 방식이 다르다.
+
+13. Typescript의 static method
