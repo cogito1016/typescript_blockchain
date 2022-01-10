@@ -1,35 +1,26 @@
-// interface Human{ //js에서는 동작하지않는다
-//     name:string,
-//     age:number,
-//     gender:string
-// }
-
-class Human {
-    public name: string;
-    public age:number;
-    public gender:string;
-    constructor(name:string, age:number , gender?:string){
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-    }
+class Block{
+    public index:number;
+    public hash:string;
+    public previousHash: string;
+    public data: string;
+    public timestamp: number;
+    constructor(index:number,
+        hash:string,
+        previousHash: string,
+        data: string,
+        timestamp: number){
+            this.index = index;
+            this.hash = hash;
+            this.previousHash = previousHash;
+            this.data = data;
+            this.timestamp = timestamp;
+        }
 }
 
-const lynn = new Human("Lynn", 18, "female");
+const genesisBlock:Block = new Block(0, "10101010", "", "Hello", 123456);
 
-const person = {
-    name:"Aayden",
-    age:28,
-    gender:"male"
-}
+let blockchain:[Block] = [genesisBlock]; //Arr Type of Block
 
-const sayHi = (person:Human):string => {
-    return `hello ${person.name} you are ${person.age} years old and you are ${person.gender}!!`;
-}
+// blockchain.push("stuff"); 작동안함 BlockType이 아니다.
 
-// console.log(sayHi("Jayden", 14, "male")); 초기버전
-// console.log(sayHi(person)); 곧바로 이렇게 호출하면 동작불가 interface 필요
-console.log(sayHi(person)); //interface가 적용되면 동작가능
-console.log(sayHi(lynn));
-
-export {}; //Typescript법칙, 이 파일이 모듈이 된다는걸 이해할 수 있도록 명시
+console.log(blockchain);
