@@ -59,3 +59,13 @@ Include value수정 - src/\*_/_ : src폴더 내 모든 파일들이 대상
 
 9.  타입스크립트의 Object를 위해서는 inteface가 필요
     interface를 통해 Object 키 들의 명세를 작성할 수 있다.
+
+10. class는 js의 경우 속성타입명시가 필요없지만, ts에서는 필요하다.
+    속성타입 뿐만아니라 권한까지 표시한다.
+    -private : 클래스 내부에만 접근가능
+    -public : 모두 접근 가능
+
+10-1.
+Interface vs class
+Node, express, react 등을 사용한다면 class를 사용해야함
+..이부분은 설명이 부족하다 보완이 필요
