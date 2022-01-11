@@ -81,3 +81,5 @@ Node, express, react 등을 사용한다면 class를 사용해야함
     typescript라서 import의 방식이 다르다.
 
 13. Typescript의 static method
+
+14. Validation
