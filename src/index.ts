@@ -39,16 +39,24 @@ const getLatestBlock = ():Block => blockchain[blockchain.length -1];
 
 const getNewTimestamp = ():number => Math.round(new Date().getTime()/1000);
 
+const addBlock = (candidateBlock:Block) :void => {
+    if(isBlockValid(candidateBlock, getLatestBlock())){
+        blockchain.push(candidateBlock);
+    }
+}
+
 const createNewBlock = (data:string):Block => {
     const previousBlock:Block = getLatestBlock();
     const newIndex :number = previousBlock.index + 1;
     const newTimestamp :number = getNewTimestamp();
     const newHash:string = Block.calculateBlockHash(newIndex, previousBlock.hash, newTimestamp, data);
     const newBlock:Block = new Block(newIndex, newHash, previousBlock.hash, data, newTimestamp);
-    blockchain.push(newBlock);
+    addBlock(newBlock);
 
     return newBlock;
 }
+
+const getHashforBlock = (aBlock:Block):string => Block.calculateBlockHash(aBlock.index,aBlock.previousHash,aBlock.timestamp,aBlock.data);
 
 const isBlockValid = (candidateBlock:Block, previousBlock:Block):boolean => {
     if(!Block.validateStructure(candidateBlock)){
@@ -57,11 +65,19 @@ const isBlockValid = (candidateBlock:Block, previousBlock:Block):boolean => {
         return false;
     }else if(previousBlock.hash !== candidateBlock.previousHash){
         return false;
+    }else if(getHashforBlock(candidateBlock) !== candidateBlock.hash){
+        return false;
+    }else{
+        return true;
     }
 }
 
 console.log(createNewBlock("Hello"), createNewBlock("Bye Bye"));
 
-// blockchain.push("stuff"); 작동안함 BlockType이 아니다.
+createNewBlock("secondBlock");
+createNewBlock("thirdBlock");
+createNewBlock("fourthBlock");
 
 console.log(blockchain);
+
+// blockchain.push("stuff"); 작동안함 BlockType이 아니다.
