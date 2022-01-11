@@ -1,6 +1,4 @@
-# typescript_blockchain
-
-타입스크립트를 이용한 블록체인
+# Typescript
 
 Tyscript -프로그래밍언어 -컴파일하면 JS컴파일됨
 
