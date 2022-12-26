@@ -32,12 +32,12 @@ const strategy_1 = () => {
     }
 
     class Duck{
-        flyBehavir:cantFly;
-        quackBehavior:cantQuack;
+        flyBehavir:flyBehavior;
+        quackBehavior:quackBehavior;
 
         constructor(){
-            this.flyBehavir = new cantFly();
-            this.quackBehavior = new cantQuack();
+            this.flyBehavir = new canFly();
+            this.quackBehavior = new canQuack();
         }
     }
 
