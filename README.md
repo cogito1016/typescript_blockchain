@@ -131,3 +131,11 @@ typescript라서 import의 방식이 다르다.
 - 모든 숫자는 부동 소수점 값 또는 Big Integer
 - 부동 소수점 숫자는 number
 - BigInteger은 bigint 형식
+
+#### any
+- 피해라.
+- 형식 안정성이 보장되지 않는다.
+
+#### Unknown
+- 모든값을 할당하는점에서는 any랑 동일
+- 그러나 unknown형식의 속성에 엑세스하거나 속성을 호출 또는 생성할 수 없다.

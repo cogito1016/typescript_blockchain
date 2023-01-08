@@ -26,3 +26,23 @@ enum ContractStatus {
 
 console.log(ContractStatus.Apprentice);
 console.log(ContractStatus["Junior"]);
+
+
+let any:any;
+any = 10;
+any = "Hello";
+any = 1.1;
+
+any.hello = 1;
+any();
+any.toUpperCase();
+
+let unknown:unknown;
+unknown = 10;
+unknown = "Hello";
+unknown = 1.1;
+
+//Unknown형식이라는 이유로 any와 다르게 사용할 수 없다.
+// unknown.hello = 1;
+// unknown();
+// unknown.toUpperCase();
