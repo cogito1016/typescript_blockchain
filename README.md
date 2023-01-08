@@ -112,4 +112,22 @@ typescript라서 import의 방식이 다르다.
 #### Typescript의 static method
 그냥 흔히 아는 static..   
 
-#### Validation
+- - - 
+### Type
+
+- 최상위는 Any
+- 기본형식은 number, string, boolean, null, undefined, symbol
+- 개체형식은 object, array, function, class, interface, enum, tuple, type alias, type parameter
+- 그리고 any, never, unknown, void
+
+- any는 모든 타입을 포함
+- never는 절대 발생하지 않는 값의 타입
+- unknown은 모든 타입을 포함하지만, 타입을 알 수 없음
+- void는 undefined와 null을 포함하는 타입
+
+- null과 undefined는 모든 타입의 하위 타입
+
+#### number
+- 모든 숫자는 부동 소수점 값 또는 Big Integer
+- 부동 소수점 숫자는 number
+- BigInteger은 bigint 형식
