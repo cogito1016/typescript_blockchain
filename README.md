@@ -147,3 +147,7 @@ typescript라서 import의 방식이 다르다.
 - <>로도 쓸 수 있다.
 - unknown이나 any를 다른 타입으로 변환할 때 사용
 - 즉, unknown & any를 형변환 할 때 사용
+
+#### Type Guard
+- javscript는 typeof 및 instanceof가 있다.
+- typescript는 typeof variable === 'type'을 사용할 수 있다.
