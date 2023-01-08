@@ -139,3 +139,11 @@ typescript라서 import의 방식이 다르다.
 #### Unknown
 - 모든값을 할당하는점에서는 any랑 동일
 - 그러나 unknown형식의 속성에 엑세스하거나 속성을 호출 또는 생성할 수 없다.
+
+
+#### Type Assertion
+- "믿어라"라는 의미
+- as가 기본 구문
+- <>로도 쓸 수 있다.
+- unknown이나 any를 다른 타입으로 변환할 때 사용
+- 즉, unknown & any를 형변환 할 때 사용
