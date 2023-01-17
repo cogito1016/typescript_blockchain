@@ -2,6 +2,7 @@
 //그러나Tszmffotmsms 그 기능을 확장
 
 class Car{
+    private static numberOfCars: number = 0; //정적멤버 및 메서드는 클래스의 모든 인스턴스에서 공유
     private _make: string; //기본적으로 public
     private _color: string;
     private _doors: number;
@@ -10,6 +11,7 @@ class Car{
         this._make = make;
         this._color = color;
         this._doors = doors;
+        Car.numberOfCars ++;
     }
 
     get make(){
@@ -39,9 +41,17 @@ class Car{
 
         this._doors = doors;
     }
+
+    static get numberOfCar(){
+        return Car.numberOfCars;
+    }
 }
 
 let myCar1 = new Car('Cool Car Company', 'blue', 2);
 
 console.log(myCar1.color);
 // console.log(myCar1._color); private설정하니 원시멤버에는 접근이불가능하다. 
+console.log(Car.numberOfCar);
+
+let myCar2 = new Car('hey','red',4);
+console.log(Car.numberOfCar);
