@@ -1,7 +1,7 @@
 //Javascript class는 결국 슈가문법(프로토타입 기반)
 //그러나Tszmffotmsms 그 기능을 확장
 
-class Car{
+class Car implements Vehicle{
     private static numberOfCars: number = 0; //정적멤버 및 메서드는 클래스의 모든 인스턴스에서 공유
     protected _make: string; //기본적으로 public
     private _color: string;
@@ -48,6 +48,14 @@ class Car{
 
     break():string{
         return `BB RR EE AA KK !!`;
+    }
+
+    accelerate(speed: number): string {
+        return `The speed is ${speed}`;
+    }
+
+    turn(direction: "left" | "right"): string {
+        return `Turn the ${direction} side`;
     }
 }
 
