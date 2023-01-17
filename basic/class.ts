@@ -2,9 +2,9 @@
 //그러나Tszmffotmsms 그 기능을 확장
 
 class Car{
-    _make: string;
-    _color: string;
-    _doors: number;
+    private _make: string; //기본적으로 public
+    private _color: string;
+    private _doors: number;
 
     constructor(make:string, color:string, doors:number){
         this._make = make;
@@ -40,3 +40,8 @@ class Car{
         this._doors = doors;
     }
 }
+
+let myCar1 = new Car('Cool Car Company', 'blue', 2);
+
+console.log(myCar1.color);
+// console.log(myCar1._color); private설정하니 원시멤버에는 접근이불가능하다. 
