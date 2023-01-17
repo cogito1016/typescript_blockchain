@@ -3,7 +3,7 @@
 
 class Car{
     private static numberOfCars: number = 0; //정적멤버 및 메서드는 클래스의 모든 인스턴스에서 공유
-    private _make: string; //기본적으로 public
+    protected _make: string; //기본적으로 public
     private _color: string;
     private _doors: number;
 
@@ -45,6 +45,10 @@ class Car{
     static get numberOfCar(){
         return Car.numberOfCars;
     }
+
+    break():string{
+        return `BB RR EE AA KK !!`;
+    }
 }
 
 let myCar1 = new Car('Cool Car Company', 'blue', 2);
@@ -55,3 +59,34 @@ console.log(Car.numberOfCar);
 
 let myCar2 = new Car('hey','red',4);
 console.log(Car.numberOfCar);
+
+class ElectricCar extends Car{
+    private _range: number;
+    constructor(make:string, color:string, range:number, doors=2){
+        super(make,color,doors);
+        this._range=range ;
+    }
+
+    get range(){
+        return this._range;
+    }
+
+    set range(range:number ){
+        this._range = range ;
+    }
+
+    charge(){
+        console.log(this._make+"is charging.");
+    }
+
+    break():string{ //메소드 오버라이딩
+        return `break!`;
+    }
+}
+
+let spark = new ElectricCar('Spark Motors','silver', 124, 2);
+let eCar = new ElectricCar('Electric Car Co.', 'black', 263);
+console.log(eCar);
+spark.charge();
+console.log(myCar1.break()); 
+console.log(spark.break());
