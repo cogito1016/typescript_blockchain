@@ -8,7 +8,7 @@
     "tsc-watch": "^6.0.0"
   },
   "scripts": {
-    "start": "tsc-watch --onSuccess \"node dist/problem/lv4/countNumber.js\"",
+    "start": "tsc-watch --onSuccess \"node dist/problem/index.js\"",
     "prestart": "tsc"
   },
   "ts-node": {
