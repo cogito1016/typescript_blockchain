@@ -171,3 +171,7 @@ typescript라서 import의 방식이 다르다.
 - javscript는 typeof 및 instanceof가 있다.
 - typescript는 typeof variable === 'type'을 사용할 수 있다.
 
+- - -
+### ESLint 설정
+1. npm i -D eslint
+2. npx eslint --init
