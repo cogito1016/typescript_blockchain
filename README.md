@@ -175,3 +175,8 @@ typescript라서 import의 방식이 다르다.
 ### ESLint 설정
 1. npm i -D eslint
 2. npx eslint --init
+
+- - -
+### Prettier 설정
+1. npm i -D prettier 
+2. npm i -D eslint-config-prettier eslint-plugin-prettier
