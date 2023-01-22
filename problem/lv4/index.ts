@@ -3,5 +3,6 @@ import { CountNumber } from './count-number';
 import { LessThanX } from './less-than-x';
 import { MinMaxGenerator } from './min-max-generator';
 import { NumberSorter } from './number-sorter';
+import { MaxFinder } from './max-finder';
 
-export { CountNumber, LessThanX, MinMaxGenerator, NumberSorter };
+export { CountNumber, LessThanX, MinMaxGenerator, NumberSorter, MaxFinder };
