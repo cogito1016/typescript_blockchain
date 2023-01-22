@@ -1,7 +1,7 @@
-import { Common } from "../common"
+import { FS } from "../common"
 
 export const MinMaxGenerator = () => {
-    const input: string[] = Common();
+    const input: string[] = FS();
     const numArr: number[] = input[1].split(' ').map((str: string) => parseInt(str));
 
     //reduce를 이용하여 numArr의 최소값 구하기

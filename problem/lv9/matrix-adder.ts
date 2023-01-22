@@ -1,7 +1,7 @@
-import { Common } from "../common"
+import { FS } from "../common"
 
 export const MatrixAdder = () => {
-    const input: string[] = Common();
+    const input: string[] = FS();
 
     const [x, y] = input[0].split(' ').map((str: string) => parseInt(str));
 
