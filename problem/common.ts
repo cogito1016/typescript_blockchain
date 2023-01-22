@@ -18,6 +18,6 @@
  */
 export const Common = () => {
     const fs = require('fs');
-    const input : string[] = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+    const input: string[] = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
     return input;
 }
