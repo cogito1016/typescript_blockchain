@@ -34,6 +34,8 @@ var b = parseInt(input[1]);
 console.log(a+b);
 ```
 
+- 배열은 펼침연산자를 이용해 풀어서 출력해야한다 ex) console.log(...result)
+
 ## Tyscript 
 -프로그래밍언어   
 -컴파일하면 JS컴파일됨   
