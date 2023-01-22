@@ -16,6 +16,23 @@
     * 사용 이유에 대해 설명할 수 있는가?
 * Class
     * Inteface의 사용이유 관점에서, Inteface대신 Class를 사용했을 때 어떤 차이점이 있는가? 
+* 백준에서 Typescript 사용하기    
+
+- - -
+## 백준(BOJ)에서 Typescript을 사용하기
+1. TS->NodeJS를 변환시켜 줄 TSC를 사용
+2. 입력 받는방법
+3. 출력 하는방법
+
+###### 입력받는방법
+- readline모듈 < fs모듈 (속도가 더 빠르다)
+```javscript
+var fs = require('fs');
+var input = fs.readFileSync('/dev/stdin').toString().split(' ');
+var a = parseInt(input[0]);
+var b = parseInt(input[1]);
+console.log(a+b);
+```
 
 ## Tyscript 
 -프로그래밍언어   
@@ -151,3 +168,4 @@ typescript라서 import의 방식이 다르다.
 #### Type Guard
 - javscript는 typeof 및 instanceof가 있다.
 - typescript는 typeof variable === 'type'을 사용할 수 있다.
+
