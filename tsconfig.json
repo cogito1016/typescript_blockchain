@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/problem",
+        "module": "commonjs",
+        "target": "es6",
+    },
+    "include": [
+        "./problem"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
