@@ -24,7 +24,7 @@ export const FS = () => {
 
 /**
  * 
- * 백준제출예시
+ * 백준제출예시 
  * const readline = require('readline');
    const rl = readline.createInterface({
         input: process.stdin,
