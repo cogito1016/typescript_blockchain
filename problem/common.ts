@@ -29,12 +29,15 @@ export const READLINE = () => {
         output: process.stdout
     });
 
-    let input = ''
-    rl.on('line', function (line) {
-        input += line + '\n';
-    }).on('close', function () {
-        process.exit();
-    });
+    return function (solution) {
+        let input: string = '';
+        rl.on('line', function (line: string) {
+            input += line + '\n';
+        }).on('close', function () {
+            solution(input);
+            process.exit();
+        });
+    }
 
     return rl;
 }
