@@ -1,5 +1,12 @@
 import { READLINE } from "../common"
 
+/**
+ * 
+ * t	p	result
+"3141592"	"271"	2
+"500220839878"	"7"	8
+"10203"	"15"	3
+ */
 export const PartitionValueCounter = () => {
     const readline = READLINE();
 
