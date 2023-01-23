@@ -1,12 +1,17 @@
-import { FS } from "../common"
+import { FS, READLINE } from "../common"
 
 export const MinMaxGenerator = () => {
-    const input: string[] = FS();
-    const numArr: number[] = input[1].split(' ').map((str: string) => parseInt(str));
+    const readline = READLINE();
 
-    //reduce를 이용하여 numArr의 최소값 구하기
-    const min: number = numArr.reduce((prev, curr) => prev > curr ? curr : prev, 1000000);
-    const max: number = numArr.reduce((prev, curr) => prev < curr ? curr : prev, -1000000);
+    function solution(input) {
+        const numArr: number[] = input[1].split(' ').map((str: string) => parseInt(str));
 
-    console.log(`${min} ${max}`);
-}
+        //reduce를 이용하여 numArr의 최소값 구하기
+        const min: number = numArr.reduce((prev, curr) => prev > curr ? curr : prev, 1000000);
+        const max: number = numArr.reduce((prev, curr) => prev < curr ? curr : prev, -1000000);
+
+        console.log(`${min} ${max}`);
+    }
+
+    readline(solution);
+} 
