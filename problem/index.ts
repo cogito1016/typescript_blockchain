@@ -10,4 +10,5 @@ import * as lv1_pgm from './lv1_pgm'
 // lv4.MaxFinder();
 // lv9.MatrixAdder(); 
 // lv1_pgm.PartitionValueCounter();
-lv1_pgm.NearestSameString();
+// lv1_pgm.NearestSameString();
+lv1_pgm.StringDivider();
