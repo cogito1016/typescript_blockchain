@@ -100,17 +100,17 @@ index.js를 실행
 -없다면 당연히 undefined
 
 #### 함수의 매개변수에 ‘:’를 통해 타입을 지정할 수 있다.
--그럴 경우 함수호출 시 매개변수가 지정된 타입과 다르다면, 에러발생
+- 그럴 경우 함수호출 시 매개변수가 지정된 타입과 다르다면, 에러발생
 
 
 #### Interface
--타입스크립트의 Object를 위해서는 inteface가 필요   
--interface를 통해 Object 키 들의 명세를 작성할 수 있다.
-
+- 타입스크립트의 Object를 위해서는 inteface가 필요   
+- interface를 통해 Object 키 들의 명세를 작성할 수 있다.
+ 
 #### Class
--class는 js의 경우 속성타입명시가 필요없지만, ts에서는 필요하다(속성타입 뿐만아니라 권한까지 표시한다)   
--private : 클래스 내부에만 접근가능   
--public : 모두 접근 가능   
+- class는 js의 경우 속성타입명시가 필요없지만, ts에서는 필요하다(속성타입 뿐만아니라 권한까지 표시한다)   
+- private : 클래스 내부에만 접근가능   
+- public : 모두 접근 가능   
 
 #### Interface vs class
 Node, express, react 등을 사용한다면 class를 사용해야함   
