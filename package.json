@@ -15,7 +15,8 @@
   },
   "scripts": {
     "start": "tsc-watch --onSuccess \"node dist/problem/index.js\"",
-    "prestart": "tsc"
+    "prestart": "tsc",
+    "lint": "eslint problem/**/*.ts"
   },
   "ts-node": {
     "transpileOnly": true,
