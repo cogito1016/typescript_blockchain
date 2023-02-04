@@ -52,3 +52,16 @@ class RubberDuck_2 extends Duck_3 {
 const r1 = new RubberDuck_2();
 r1.fly();
 r1.swim();
+
+class FlyCaller {
+    flyBehavior: FlyBehavior;
+
+    constructor() { this.flyBehavior = new FlyNoWay() }
+
+    fly(): void {
+        this.flyBehavior.fly();
+    }
+}
+
+const f1 = new FlyCaller();
+f1.fly();
