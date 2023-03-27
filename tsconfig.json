@@ -19,6 +19,6 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
   },
-  "include": ["./problem"],
+  "include": ["./problem", "./designPattern"],
   "exclude": ["./node_modules"]
 }

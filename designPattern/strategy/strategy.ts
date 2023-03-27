@@ -30,57 +30,57 @@
 // turkey.gobble();
 
 const strategy = () => {
-    //전략 패턴을 사용하는 경우
-    interface FlyBehavior {
-        fly(): void;
-    }
+  //전략 패턴을 사용하는 경우
+  interface FlyBehavior {
+    fly(): void;
+  }
 
-    interface QuackBehavior {
-        quack(): void;
-    }
+  interface QuackBehavior {
+    quack(): void;
+  }
 
-    class FlyWithWings implements FlyBehavior {
-        fly() {
-            console.log("fly");
-        }
+  class FlyWithWings implements FlyBehavior {
+    fly() {
+      console.log('fly');
     }
+  }
 
-    class FlyNoWay implements FlyBehavior {
-        fly() {
-            console.log("can't fly");
-        }
+  class FlyNoWay implements FlyBehavior {
+    fly() {
+      console.log("can't fly");
     }
+  }
 
-    class Quack implements QuackBehavior {
-        quack() {
-            console.log("quack");
-        }
+  class Quack implements QuackBehavior {
+    quack() {
+      console.log('quack');
     }
+  }
 
-    class MuteQuack implements QuackBehavior {
-        quack() {
-            console.log("can't quack");
-        }
+  class MuteQuack implements QuackBehavior {
+    quack() {
+      console.log("can't quack");
     }
+  }
 
-    class Duck {
-        flyBehavior: FlyBehavior;
-        quackBehavior: QuackBehavior;
-        constructor() {
-            this.flyBehavior = new FlyWithWings();
-            this.quackBehavior = new Quack();
-        }
-        fly() {
-            this.flyBehavior.fly();
-        }
-        quack() {
-            this.quackBehavior.quack();
-        }
+  class Duck {
+    flyBehavior: FlyBehavior;
+    quackBehavior: QuackBehavior;
+    constructor() {
+      this.flyBehavior = new FlyWithWings();
+      this.quackBehavior = new Quack();
     }
+    fly() {
+      this.flyBehavior.fly();
+    }
+    quack() {
+      this.quackBehavior.quack();
+    }
+  }
 
-    const duck = new Duck();
-    duck.fly();
-    duck.quack();
-}
+  const duck = new Duck();
+  duck.fly();
+  duck.quack();
+};
 
 export default strategy;

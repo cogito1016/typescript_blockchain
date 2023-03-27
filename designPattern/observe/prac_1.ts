@@ -65,7 +65,6 @@
 //     }
 // }
 
-
 // class SpecialDisplay implements Observer, Display {
 //     temp: number;
 //     humi: number;

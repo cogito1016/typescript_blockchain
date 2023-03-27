@@ -1,4 +1,4 @@
-import { FS } from '../common'
+import { FS } from '../common';
 
 /**
  * 예제 입력
@@ -8,15 +8,15 @@ import { FS } from '../common'
     1 4 2 3
  */
 export const LessThanX = () => {
-    const input = FS();
-    console.log(input);
-    const firstLine = input[0].split(' ');
-    const numArr = input[1].split(' ').map((str: string) => parseInt(str));
+  const input = FS();
+  console.log(input);
+  const firstLine = input[0].split(' ');
+  const numArr = input[1].split(' ').map((str: string) => parseInt(str));
 
-    const arrLen: number = parseInt(firstLine[0]);
-    const x: number = parseInt(firstLine[1]);
+  const arrLen: number = parseInt(firstLine[0]);
+  const x: number = parseInt(firstLine[1]);
 
-    const result = numArr.filter((num: number) => num < x);
+  const result = numArr.filter((num: number) => num < x);
 
-    console.log(...result);
-}
+  console.log(...result);
+};

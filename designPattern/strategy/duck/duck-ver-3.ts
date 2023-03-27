@@ -1,41 +1,41 @@
-
+//@ts-nocheck
 class Duck_3 {
-    protected flyBehavior: FlyBehavior
+  protected flyBehavior: FlyBehavior;
 
-    display(): void {
-        console.log("귀여운 노란 덕")
-    }
+  display(): void {
+    console.log('귀여운 노란 덕');
+  }
 
-    swim(): void {
-        console.log("어푸푸")
-    }
+  swim(): void {
+    console.log('어푸푸');
+  }
 
-    fly(): void {
-        this.flyBehavior.fly();
-    }
+  fly(): void {
+    this.flyBehavior.fly();
+  }
 }
 
 interface FlyBehavior {
-    fly();
+  fly();
 }
 
 class FlyWithWings implements FlyBehavior {
-    fly() {
-        console.log("난다요")
-    }
+  fly() {
+    console.log('난다요');
+  }
 }
 
 class FlyNoWay implements FlyBehavior {
-    fly() {
-        console.log("못난다요");
-    }
+  fly() {
+    console.log('못난다요');
+  }
 }
 
 class MallardDuck_2 extends Duck_3 {
-    constructor() {
-        super();
-        this.flyBehavior = new FlyWithWings();
-    }
+  constructor() {
+    super();
+    this.flyBehavior = new FlyWithWings();
+  }
 }
 
 const m1 = new MallardDuck_2();
@@ -43,10 +43,10 @@ m1.fly();
 m1.swim();
 
 class RubberDuck_2 extends Duck_3 {
-    constructor() {
-        super();
-        this.flyBehavior = new FlyNoWay();
-    }
+  constructor() {
+    super();
+    this.flyBehavior = new FlyNoWay();
+  }
 }
 
 const r1 = new RubberDuck_2();
@@ -54,13 +54,15 @@ r1.fly();
 r1.swim();
 
 class FlyCaller {
-    flyBehavior: FlyBehavior;
+  flyBehavior: FlyBehavior;
 
-    constructor() { this.flyBehavior = new FlyNoWay() }
+  constructor() {
+    this.flyBehavior = new FlyNoWay();
+  }
 
-    fly(): void {
-        this.flyBehavior.fly();
-    }
+  fly(): void {
+    this.flyBehavior.fly();
+  }
 }
 
 const f1 = new FlyCaller();

@@ -1,4 +1,4 @@
-console.log("hello");
+console.log('hello');
 
 class Stack {
   constructor() {
@@ -17,9 +17,11 @@ class Stack {
       return false;
     }
 
-    if (this._arr[this._arr.length - 1] === 3 &&
-      (this._arr[this._arr.length - 2] === 2 &&
-        this._arr[this._arr.length - 3] === 1)) {
+    if (
+      this._arr[this._arr.length - 1] === 3 &&
+      this._arr[this._arr.length - 2] === 2 &&
+      this._arr[this._arr.length - 3] === 1
+    ) {
       return true;
     }
 

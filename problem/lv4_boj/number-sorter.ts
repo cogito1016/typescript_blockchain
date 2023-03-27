@@ -1,4 +1,4 @@
-import { FS } from "../common"
+import { FS } from '../common';
 /**
  * 예제 입력 1 
     10 5
@@ -7,11 +7,11 @@ import { FS } from "../common"
     1 4 2 3
  */
 export const NumberSorter = () => {
-    const input: string[] = FS();
+  const input: string[] = FS();
 
-    input.shift();
-    const numArr: number[] = input.map((str: string) => parseInt(str));
+  input.shift();
+  const numArr: number[] = input.map((str: string) => parseInt(str));
 
-    numArr.sort((a, b) => a - b);
-    console.log(numArr.join('\n'));
-}
+  numArr.sort((a, b) => a - b);
+  console.log(numArr.join('\n'));
+};

@@ -1,49 +1,49 @@
-const strategy_1 = () => {    
-    interface flyBehavior{
-        fly():void;
+const strategy_1 = () => {
+  interface flyBehavior {
+    fly(): void;
+  }
+
+  interface quackBehavior {
+    quack(): void;
+  }
+
+  class canFly implements flyBehavior {
+    fly(): void {
+      console.log('I can fly');
     }
+  }
 
-    interface quackBehavior{
-        quack():void;
+  class cantFly implements flyBehavior {
+    fly(): void {
+      console.log("I can't fly");
     }
+  }
 
-    class canFly implements flyBehavior{
-        fly():void{
-            console.log("I can fly");
-        }
+  class canQuack implements quackBehavior {
+    quack(): void {
+      console.log('I can quack');
     }
+  }
 
-    class cantFly implements flyBehavior{
-        fly():void{
-            console.log("I can't fly");
-        }
+  class cantQuack implements quackBehavior {
+    quack(): void {
+      console.log("I can't quack");
     }
+  }
 
-    class canQuack implements quackBehavior{
-        quack(): void {
-            console.log("I can quack");
-        }
+  class Duck {
+    flyBehavir: flyBehavior;
+    quackBehavior: quackBehavior;
+
+    constructor() {
+      this.flyBehavir = new canFly();
+      this.quackBehavior = new canQuack();
     }
+  }
 
-    class cantQuack implements quackBehavior{
-        quack(): void {
-            console.log("I can't quack")
-        }
-    }
-
-    class Duck{
-        flyBehavir:flyBehavior;
-        quackBehavior:quackBehavior;
-
-        constructor(){
-            this.flyBehavir = new canFly();
-            this.quackBehavior = new canQuack();
-        }
-    }
-
-    const duck = new Duck();
-    duck.flyBehavir.fly();
-    duck.quackBehavior.quack();
-}
+  const duck = new Duck();
+  duck.flyBehavir.fly();
+  duck.quackBehavior.quack();
+};
 
 export default strategy_1;
