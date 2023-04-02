@@ -1,9 +1,5 @@
 export abstract class Beverage {
-  _description: string;
-
-  constructor(description: string) {
-    this._description = description;
-  }
+  _description: string = '메뉴이름';
 
   get description(): string {
     return this._description;
