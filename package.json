@@ -18,7 +18,7 @@
     "tsc-watch": "^6.0.0"
   },
   "scripts": {
-    "start": "tsc-watch --onSuccess \"node dist/problem/designPattern/index.js\"",
+    "start": "tsc-watch --onSuccess \"node dist/problem/problem/index.js\"",
     "prestart": "tsc",
     "lint": "eslint problem/**/*.ts"
   },

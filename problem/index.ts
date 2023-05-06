@@ -2,6 +2,7 @@ import { READLINE } from './common';
 import * as lv4 from './lv4_boj';
 import * as lv9 from './lv9_ boj';
 import * as lv1_pgm from './lv1_pgm';
+import * as lv1_boj from './lv1_boj';
 
 // lv4.CountNumber();
 // lv4.LessThanX();
@@ -12,5 +13,4 @@ import * as lv1_pgm from './lv1_pgm';
 // lv1_pgm.PartitionValueCounter();
 // lv1_pgm.NearestSameString();
 // lv1_pgm.StringDivider();
-
-console.log('hi');
+lv1_boj.little_jungmin();
