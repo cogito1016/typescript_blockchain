@@ -1,3 +1,4 @@
+import { ApiReader } from '../package/api_caller/api_reader';
 import { ExcelParser } from '../package/excel_controller/excel_parser';
 import { ExcelReader } from '../package/excel_controller/excel_reader';
 
@@ -30,6 +31,9 @@ export function Run() {
         return map;
       }
     );
-    console.log(data);
+    // console.log(data);
   });
+
+  const apiData = ApiReader.CallMemberList(1, 100);
+  console.log(apiData);
 }
