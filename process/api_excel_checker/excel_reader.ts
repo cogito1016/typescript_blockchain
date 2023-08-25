@@ -15,12 +15,6 @@ export class ExcelReader {
     const workbook = XLSX.readFile(filePath);
     const sheetNames = workbook.SheetNames;
 
-    sheetNames.forEach((sheetName) => {
-      console.log(`Reading sheet: ${sheetName}`);
-
-      const sheet = workbook.Sheets[sheetName];
-      const data = XLSX.utils.sheet_to_json(sheet);
-      console.log(data);
-    });
+    return { workbook, sheetNames };
   }
 }
