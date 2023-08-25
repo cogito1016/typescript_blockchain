@@ -9,12 +9,17 @@ export class ExcelParser {
   }
 
   static _solution(data: any[]) {
-    return data.map((element: any) => {
-      return {
-        member_code: element['고유키(!)'],
-        cnt: element['구매횟수(KRW)(!)'],
-        total_price: element['구매금액(KRW)(!)'],
+    const map = new Map<string, object>();
+
+    data.forEach((row) => {
+      const key = row['고유키(!)'];
+      const value = {
+        cnt: row['구매횟수(KRW)(!)'],
+        total_price: row['구매금액(KRW)(!)'],
       };
+      map.set(key, value);
     });
+
+    return map;
   }
 }
