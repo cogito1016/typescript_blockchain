@@ -3,10 +3,10 @@ export const little_jungmin = () => {
   console.log(solution(input));
 };
 
-const solution = (input: string): number => {
+function solution(input: string): number {
   const result = input
     .split(' ')
     .map((str) => parseInt(str))
     .reduce((a, b) => a + b, 0);
   return result;
-};
+}
