@@ -8,8 +8,12 @@ export function Run() {
 
   const { workbook, sheetNames } = reader.getResult();
 
+  //   sheetNames.forEach((sheetName) => {
+  // solution
+  //   });
+
   sheetNames.forEach((sheetName) => {
-    const data = ExcelParser.GetDataBySheetName(workbook, sheetName);
-    console.log(data.length);
+    const data = ExcelParser.GetParsedDataBySheetName(workbook, sheetName);
+    console.log(data);
   });
 }
