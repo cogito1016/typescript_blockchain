@@ -1,5 +1,5 @@
-import { ExcelParser } from './excel_parser';
-import { ExcelReader } from './excel_reader';
+import { ExcelParser } from '../package/excel_parser';
+import { ExcelReader } from '../package/excel_reader';
 
 export function Run() {
   const reader = new ExcelReader(
