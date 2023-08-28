@@ -1,8 +1,7 @@
 import axios from 'axios';
 
-//api_info.env 파일을 읽어서 환경변수로 등록한다.
 require('dotenv').config({
-  path: '',
+  path: `${__dirname}/.api_info.env`,
 });
 export class ApiReader {
   static URL: string | undefined = process.env.API_URL;
@@ -11,18 +10,13 @@ export class ApiReader {
   static async CallMemberList(offset: number, limit: number) {
     const url = `${this.URL}/${this.VERSION}/member/members?offset=${offset}&limit=${limit}`;
 
-    await axios
-      .get(url, {
-        headers: {
-          'Content-Type': 'application/json',
-          'access-token': process.env.API_ACCESS_TOKEN,
-        },
-      })
-      .then((res) => {
-        const result = res.data;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    const response = await axios.get(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        'access-token': process.env.API_ACCESSTOKEN,
+      },
+    });
+
+    return response.data;
   }
 }

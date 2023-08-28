@@ -5,7 +5,7 @@ import { ExcelReader } from '../package/excel_controller/excel_reader';
 /**
  * Excel데이터와 API응답데이터의 일관성을 체크한다.
  */
-export function Run() {
+export async function Run() {
   const reader = new ExcelReader(
     '/Users/gimjaehyeong/Desktop/member_excel.xls'
   );
@@ -34,6 +34,6 @@ export function Run() {
     // console.log(data);
   });
 
-  const apiData = ApiReader.CallMemberList(1, 100);
+  const apiData = await ApiReader.CallMemberList(1, 100);
   console.log(apiData);
 }
