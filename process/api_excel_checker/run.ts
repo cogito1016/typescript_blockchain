@@ -12,6 +12,13 @@ export async function Run() {
 
   const { workbook, sheetNames } = reader.getResult();
 
+  let excelDataList: Map<string, object> = new Map();
+
+  /**
+   * Map(159) {
+    '멤버Code' => { cnt: '23', total_price: '567733' },
+    ...
+   */
   sheetNames.forEach((sheetName) => {
     const data = ExcelParser.GetParsedDataBySheetName(
       workbook,
@@ -31,9 +38,27 @@ export async function Run() {
         return map;
       }
     );
-    // console.log(data);
+
+    excelDataList = new Map([...excelDataList, ...data]);
   });
 
-  const apiData = await ApiReader.CallMemberList(1, 100);
+  /**
+   * Map(100) {
+  '멤버Code' => { cnt: 23, total_price: 567733 },
+   */
+  const apiData = await ApiReader.CallMemberList(1, 100, (rawData: any[]) => {
+    const map = new Map<string, object>();
+
+    rawData.forEach((row: any) => {
+      const key = row['member_code'];
+      const value = {
+        cnt: row['order_count'],
+        total_price: row['order_total_price'],
+      };
+      map.set(key, value);
+    });
+
+    return map;
+  });
   console.log(apiData);
 }
