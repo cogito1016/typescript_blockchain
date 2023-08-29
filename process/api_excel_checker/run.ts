@@ -7,7 +7,7 @@ import { ExcelReader } from '../package/excel_controller/excel_reader';
  */
 export async function Run() {
   const reader = new ExcelReader(
-    '/Users/gimjaehyeong/Desktop/member_excel.xls'
+    '/Users/gimjaehyeong/Desktop/test_bluming_member.xls'
   );
 
   const { workbook, sheetNames } = reader.getResult();
@@ -29,8 +29,8 @@ export async function Run() {
         rawData.forEach((row: any) => {
           const key = row['고유키(!)'];
           const value = {
-            cnt: parseInt(row['구매횟수(KRW)(!)']),
-            total_price: parseInt(row['구매금액(KRW)(!)']),
+            cnt: row['구매횟수(KRW)(!)'],
+            total_price: row['구매금액(KRW)(!)'],
           };
           map.set(key, value);
         });
@@ -61,8 +61,8 @@ export async function Run() {
         rawData.forEach((row: any) => {
           const key = row['member_code'];
           const value = {
-            cnt: row['order_count'],
-            total_price: row['order_total_price'],
+            cnt: row['order_count'].toString(),
+            total_price: row['order_total_price'].toString(),
           };
           map.set(key, value);
         });
@@ -72,7 +72,6 @@ export async function Run() {
     );
 
     if (apiData.size == 0) {
-      console.log('end');
       break;
     }
 
@@ -84,7 +83,11 @@ export async function Run() {
         if (excelValue) {
           if (JSON.stringify(value) !== JSON.stringify(excelValue)) {
             notMatchedDataCount++;
-            console.log(key, value, excelValue);
+            console.log(
+              `member_code: ${key} \nAPI   : ${JSON.stringify(
+                value
+              )}\nEXCEL : ${JSON.stringify(excelValue)}\n\n`
+            );
           }
         }
       }
@@ -96,4 +99,24 @@ export async function Run() {
   console.log('excelDataLength', excelDataLength);
   console.log('apiDataLength', apiDataLength);
   console.log('notMatchedDataCount', notMatchedDataCount);
+  RunUserControl();
+}
+
+export function RunUserControl() {
+  //CLI로부터 "run"을 입력받으면 HelloWorld를 출력한다.
+  const readline = require('readline');
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  rl.question('(실행=go, 종료=exit) 입력 : ', (answer: string) => {
+    if (answer === 'go') {
+      Run();
+    } else if (answer === 'exit') {
+      console.log('종료합니다.');
+    }
+
+    rl.close();
+  });
 }

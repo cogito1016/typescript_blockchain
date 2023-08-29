@@ -1,3 +1,3 @@
-import { Run } from './api_excel_checker/run';
+import { RunUserControl } from './api_excel_checker/run';
 
-Run();
+RunUserControl();
