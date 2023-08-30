@@ -6,9 +6,7 @@ import { ExcelReader } from '../package/excel_controller/excel_reader';
  * Excel데이터와 API응답데이터의 일관성을 체크한다.
  */
 export async function Run() {
-  const reader = new ExcelReader(
-    '/Users/gimjaehyeong/Desktop/test_bluming_member.xls'
-  );
+  const reader = new ExcelReader('');
 
   const { workbook, sheetNames } = reader.getResult();
 
@@ -20,6 +18,7 @@ export async function Run() {
     ...
    */
   sheetNames.forEach((sheetName) => {
+    console.log(`${sheetName}을 파싱중...`);
     const data = ExcelParser.GetParsedDataBySheetName(
       workbook,
       sheetName,
@@ -27,10 +26,10 @@ export async function Run() {
         const map = new Map<string, object>();
 
         rawData.forEach((row: any) => {
-          const key = row['고유키(!)'];
+          const key = row['고유키'];
           const value = {
-            cnt: row['구매횟수(KRW)(!)'],
-            total_price: row['구매금액(KRW)(!)'],
+            cnt: row['구매횟수(KRW)'],
+            total_price: row['구매금액(KRW)'],
           };
           map.set(key, value);
         });
@@ -41,9 +40,10 @@ export async function Run() {
 
     excelDataList = new Map([...excelDataList, ...data]);
   });
+  let excelDataLength = excelDataList.size;
+  console.log('excelDataLength', excelDataLength);
 
   let offset = 1;
-  let excelDataLength = excelDataList.size;
   let apiDataLength = 0;
   let notMatchedDataCount = 0;
 
@@ -94,16 +94,16 @@ export async function Run() {
     });
 
     offset++;
+    console.log(offset);
+    apiData.clear();
   } //while end
 
-  console.log('excelDataLength', excelDataLength);
   console.log('apiDataLength', apiDataLength);
   console.log('notMatchedDataCount', notMatchedDataCount);
   RunUserControl();
 }
 
 export function RunUserControl() {
-  //CLI로부터 "run"을 입력받으면 HelloWorld를 출력한다.
   const readline = require('readline');
   const rl = readline.createInterface({
     input: process.stdin,
